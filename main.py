@@ -18,9 +18,17 @@ os.system("start welcome.mp3")
 sleep(25)
 
 mid = '10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0. Now we can start with push ups!'
-language = 'en'
+print('here')
 midvoice = gTTS(text=mid, lang=language, slow=True)
 midvoice.save("mid.mp3")
 os.system("start mid.mp3")
+
+sleep(15)
+
+mid2 = '5, 4, 3, 2, 1, 0. Let us get back to running!'
+print('here')
+midvoice2 = gTTS(text=mid2, lang=language, slow=True)
+midvoice2.save("mid2.mp3")
+os.system("start mid2.mp3")
 
 sleep(15)
