@@ -55,3 +55,5 @@ print('here')
 finalvoice = gTTS(text=final, lang=language, slow=True)
 finalvoice.save("final.mp3")
 os.system("start final.mp3")
+
+serial_push.close()
