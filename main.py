@@ -25,10 +25,15 @@ os.system("start mid.mp3")
 
 sleep(15)
 
-mid2 = '5, 4, 3, 2, 1, 0. Let us get back to running!'
+mid2 = '5, 4, 3, 2, 1, 0. Let us get back to running!!!'
 print('here')
 midvoice2 = gTTS(text=mid2, lang=language, slow=True)
 midvoice2.save("mid2.mp3")
 os.system("start mid2.mp3")
+sleep(20)
 
-sleep(15)
+final = 'Concluding this workout, you were able to finish up 24 push ups in the whole session! Thank you for using Gym Bot!'
+print('here')
+finalvoice = gTTS(text=final, lang=language, slow=True)
+finalvoice.save("final.mp3")
+os.system("start final.mp3")
