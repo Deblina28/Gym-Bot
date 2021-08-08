@@ -10,3 +10,9 @@ pip install pyqt5
 pip install google-cloud
 pip install gtts
 ```
+
+## Run Locally
+```
+git clone https://github.com/Deblina28/Gym-Bot
+cd Gym-Bot
+```
