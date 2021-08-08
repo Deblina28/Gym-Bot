@@ -45,6 +45,9 @@ void loop()
   else if (raw >= 815)
     edge = true;
 
-Serial.println(ct-1);
-delay(10);
+if(Serial.available()>0)
+{
+  byte x=Serial.read();
+  Serial.println(ct-1);    
+}
 }
