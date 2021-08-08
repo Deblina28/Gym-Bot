@@ -44,14 +44,11 @@ sleep(15)
 
 iterate = 0
 decoded_bytes = 0
-while True:
-    iterate += 1
+
     try:
-        ser_bytes = serial_push.readline()
-        decoded_bytes = float(ser_bytes[0:len(ser_bytes)-2].decode("utf-8"))
+        serial_push.write(bytes("4", "utf-8"))
+        decoded_bytes=serial_push.readline().decode('Ascii')
         print(decoded_bytes)
-        if iterate > 10:
-            break
     except:
         print('error')  
 
