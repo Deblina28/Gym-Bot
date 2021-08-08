@@ -17,3 +17,8 @@ git clone https://github.com/Deblina28/Gym-Bot
 cd Gym-Bot
 python3 main.py
 ```
+
+## Relevant Links
+
+Devpost: https://devpost.com/software/gym-bot <br>
+Demo: https://youtu.be/bxDis0sWxF8
