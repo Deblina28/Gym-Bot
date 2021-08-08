@@ -19,7 +19,7 @@ myobj = gTTS(text=init, lang=language, slow=True)
 myobj.save("welcome.mp3")
 os.system("start welcome.mp3")
 
-sleep(25)
+sleep(20)
 
 mid = '10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0. Now we can start with push ups!'
 print('here')
@@ -29,13 +29,17 @@ os.system("start mid.mp3")
 
 sleep(15)
 
+os.system("start music.mp3")
+
+sleep(25)
+
 mid2 = '5, 4, 3, 2, 1, 0. Let us get back to running!'
 print('here')
 midvoice2 = gTTS(text=mid2, lang=language, slow=True)
 midvoice2.save("mid2.mp3")
 os.system("start mid2.mp3")
 
-sleep(20)
+sleep(15)
 
 iterate = 0
 decoded_bytes = 0
