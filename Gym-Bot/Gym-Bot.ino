@@ -45,8 +45,6 @@ void loop()
   else if (raw >= 815)
     edge = true;
 
-Serial.print(raw);
-Serial.print("  ");
-Serial.println(ct);
+Serial.println(ct-1);
 delay(10);
 }
