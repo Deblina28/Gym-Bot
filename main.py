@@ -10,7 +10,7 @@ from time import sleep
 import os
 import serial
 
-serial_push = serial.Serial("COM5", 115200)
+serial_push = serial.Serial("COM4", 115200, 8, serial.PARITY_NONE, serial.STOPBITS_ONE)
 serial_push.flushInput()
 
 init = 'Hey there, I am Gym Bot, your personalized Gym Assistant! Let us begin with the first work out of the day. 5, 4, 3, 2, 1, Start running!'
