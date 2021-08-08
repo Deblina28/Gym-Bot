@@ -44,9 +44,8 @@ sleep(20)
 
 mid = '10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0. Now we can start with push ups!'
 print('here')
-midvoice = gTTS(text=mid, lang=language, slow=True)
-midvoice.save("mid.mp3")
-os.system("start mid.mp3")
+synthesize_text(mid)
+os.system("start output.mp3")
 
 sleep(15)
 
@@ -56,27 +55,26 @@ sleep(25)
 
 mid2 = '5, 4, 3, 2, 1, 0. Let us get back to running!'
 print('here')
-midvoice2 = gTTS(text=mid2, lang=language, slow=True)
-midvoice2.save("mid2.mp3")
-os.system("start mid2.mp3")
+synthesize_text(mid2)
+os.system("start output.mp3")
 
 sleep(15)
 
 iterate = 0
 decoded_bytes = 0
-
+while True:
     try:
         serial_push.write(bytes("4", "utf-8"))
         decoded_bytes=serial_push.readline().decode('Ascii')
         print(decoded_bytes)
+        
     except:
         print('error')  
 
 final = 'Concluding this workout, you were able to finish up' + str(decoded_bytes) + ' push ups in the whole session! Thank you for using Gym Bot!'
 print('here')
-finalvoice = gTTS(text=final, lang=language, slow=True)
-finalvoice.save("final.mp3")
-os.system("start final.mp3")
+synthesize_text(final)
+os.system("start output.mp3")
 tweet = requests.get('https://maker.ifttt.com/trigger/tweelon/with/key/api_key_here')
 print(tweet.status_code)
 
