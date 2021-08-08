@@ -5,20 +5,40 @@ Created on Sat Aug  7 18:37:59 2021
 @author: Neel
 """
 
-from gtts import gTTS
 from time import sleep
 import os
 import serial
 import requests
+
+def synthesize_text(text):
+    from google.cloud import texttospeech
+    client = texttospeech.TextToSpeechClient()
+    input_text = texttospeech.SynthesisInput(text=text)
+    voice = texttospeech.VoiceSelectionParams(
+        language_code="en-US",
+        name="en-US-Standard-C",
+        ssml_gender=texttospeech.SsmlVoiceGender.FEMALE,
+    )
+
+    audio_config = texttospeech.AudioConfig(
+        audio_encoding=texttospeech.AudioEncoding.MP3
+    )
+
+    response = client.synthesize_speech(
+        request={"input": input_text, "voice": voice, "audio_config": audio_config}
+    )
+    with open("output.mp3", "wb") as out:
+        out.write(response.audio_content)
+        
+        
 
 serial_push = serial.Serial("COM5", 115200)
 serial_push.flushInput()
 
 init = 'Hey there, I am Gym Bot, your personalized Gym Assistant! Let us begin with the first work out of the day. 5, 4, 3, 2, 1, Start running!'
 language = 'en'
-myobj = gTTS(text=init, lang=language, slow=True)
-myobj.save("welcome.mp3")
-os.system("start welcome.mp3")
+synthesize_text(init)
+os.system("start output.mp3")
 
 sleep(20)
 
