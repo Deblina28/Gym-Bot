@@ -9,8 +9,9 @@ from gtts import gTTS
 from time import sleep
 import os
 import serial
+import requests
 
-serial_push = serial.Serial("COM4", 115200, 8, serial.PARITY_NONE, serial.STOPBITS_ONE)
+serial_push = serial.Serial("COM5", 115200)
 serial_push.flushInput()
 
 init = 'Hey there, I am Gym Bot, your personalized Gym Assistant! Let us begin with the first work out of the day. 5, 4, 3, 2, 1, Start running!'
@@ -59,5 +60,7 @@ print('here')
 finalvoice = gTTS(text=final, lang=language, slow=True)
 finalvoice.save("final.mp3")
 os.system("start final.mp3")
+tweet = requests.get('https://maker.ifttt.com/trigger/tweelon/with/key/api_key_here')
+print(tweet.status_code)
 
 serial_push.close()
