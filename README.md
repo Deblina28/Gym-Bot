@@ -15,4 +15,5 @@ pip install gtts
 ```
 git clone https://github.com/Deblina28/Gym-Bot
 cd Gym-Bot
+python3 main.py
 ```
