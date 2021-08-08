@@ -1,11 +1,11 @@
 # Gym-Bot
-A complete Murph workout assistant
+A complete workout assistant
 
 ## Inspiration
-Automating a task was our inspiration behind building this project. We first thought of making a simple hardware project that only counts the number of push-ups an individual performs. But later, we collaborated and thought of making a complete workout assistant.
+Automating a task was our inspiration behind building this project. We first thought of making a simple hardware project that only counts the number of push-ups an individual performs. But later, we collaborated and thought of making a complete Murph workout assistant.
 
 ## What it does
-Gym Bot is a workout assistant that reminds the user of doing a set of exercises. The hardware end of Gym Bot counts the number of push-ups being performed by the user. Gym Bot not only counts the number of push-ups in real-time being performed by the user but also automatically tweets about the number of push-ups one did that day. It is also installed with a timer and the Gym Bot assistant alarms one to switch to different types of exercises from time to time. And the moment the user starts exercising, the Gym Bot automatically plays music from a Youtube workout playlist. 
+Gym Bot is a workout assistant that reminds the user of doing a set of exercises. The hardware end of Gym Bot counts the number of push-ups being performed by the user. Gym Bot not only counts the number of push-ups in real-time and that too only if one performs the exercise correctly, but also automatically tweets about the number of push-ups one did that day. It is also installed with a timer and the Gym Bot assistant alarms one to switch to different types of exercises from time to time. And the moment the user starts exercising, the Gym Bot automatically plays music from a Youtube workout playlist. 
 
 ## How we built it
 We used simple Infrared sensors to measure the proximity and set its threshold in such a way, that upon giving the pushups correctly, it will increment a counter. With that, we connected an OLED display for visualizing the no of pushups there. Both the IR sensor and the OLED display are driven by the Arduino. 
